@@ -1,0 +1,25 @@
+{
+  "kind": "extractor-rollout",
+  "entry": "classic",
+  "pages": {
+    "classic": "<html><meta charset=\"utf-8\"><main id=\"resource\"><h1>目录甲</h1><div class=\"provider\">甲供方</div><p class=\"license\">研究</p></main></html>",
+    "drift": "<html><meta charset=\"utf-8\"><aside><div class=\"provider\">推荐机构</div></aside><main id=\"resource\"><h1>目录甲</h1><div class=\"owner\">甲供方</div><p class=\"license\">研究</p></main></html>"
+  },
+  "gold": {
+    "classic": {
+      "name": "目录甲",
+      "provider": "甲供方"
+    },
+    "drift": {
+      "name": "目录甲",
+      "provider": "甲供方"
+    }
+  },
+  "release": {
+    "page_family": "resource-detail",
+    "min_pages": 2,
+    "required_pass_rate": 1.0,
+    "max_ambiguity_rate": 0,
+    "max_gold_conflicts": 0
+  }
+}
