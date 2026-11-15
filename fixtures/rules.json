@@ -1,0 +1,136 @@
+{
+  "baseline": [
+    {
+      "schema": "catalog.extract-rule/v1",
+      "version": "resource-detail/2024.09",
+      "page_family": "resource-detail",
+      "resource_scope": "main#resource",
+      "description": "旧规则：按 class=provider 直接定位。新增推荐区后仍能取到非空字符串，但节点已越出资源主体。",
+      "fields": [
+        {
+          "name": "name",
+          "locator": "main#resource h1",
+          "required": true,
+          "constraints": [
+            {
+              "kind": "nonempty"
+            },
+            {
+              "kind": "within_resource"
+            }
+          ]
+        },
+        {
+          "name": "provider",
+          "locator": ".provider",
+          "required": true,
+          "constraints": [
+            {
+              "kind": "nonempty"
+            },
+            {
+              "kind": "within_resource"
+            }
+          ]
+        },
+        {
+          "name": "license",
+          "locator": ".license",
+          "required": false,
+          "constraints": [
+            {
+              "kind": "nonempty"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "candidate": [
+    {
+      "schema": "catalog.extract-rule/v1",
+      "version": "resource-detail/2026.11",
+      "page_family": "resource-detail",
+      "resource_scope": "main#resource",
+      "description": "候选规则：推荐机构改到主体之前，机构字段改用 owner，并强制位于资源主体内。",
+      "fields": [
+        {
+          "name": "name",
+          "locator": "main#resource h1",
+          "required": true,
+          "constraints": [
+            {
+              "kind": "nonempty"
+            },
+            {
+              "kind": "within_resource"
+            }
+          ]
+        },
+        {
+          "name": "provider",
+          "locator": "main#resource .owner, main#resource .provider",
+          "required": true,
+          "constraints": [
+            {
+              "kind": "nonempty"
+            },
+            {
+              "kind": "within_resource"
+            }
+          ]
+        },
+        {
+          "name": "license",
+          "locator": "main#resource .license",
+          "required": false,
+          "constraints": [
+            {
+              "kind": "nonempty"
+            },
+            {
+              "kind": "within_resource"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "series_baseline": [
+    {
+      "schema": "catalog.extract-rule/v1",
+      "version": "series/baseline",
+      "page_family": "series",
+      "resource_scope": "main#resource",
+      "description": "连续出版物旧规则：名称必需，机构字段可缺。",
+      "fields": [
+        {
+          "name": "name",
+          "locator": "main#resource h1",
+          "required": true,
+          "constraints": [
+            {
+              "kind": "nonempty"
+            },
+            {
+              "kind": "within_resource"
+            }
+          ]
+        },
+        {
+          "name": "provider",
+          "locator": "main#resource .provider, main#resource .owner",
+          "required": true,
+          "constraints": [
+            {
+              "kind": "nonempty"
+            },
+            {
+              "kind": "within_resource"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

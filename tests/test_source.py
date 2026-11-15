@@ -12,6 +12,9 @@ class SupplierSourceTests(unittest.TestCase):
         self.assertLess(page.index('推荐机构'), page.index('<main'))
         self.assertEqual(source.DATA['gold']['drift']['provider'], '甲供方')
         self.assertEqual(source.DATA['release']['max_gold_conflicts'], 0)
+        newer = self.route('/drift2')[2].decode()
+        self.assertLess(newer.index('<main'), newer.index('推荐机构'))
+        self.assertEqual(source.DATA['gold']['drift2']['name'], '目录丙')
     def test_http_state_endpoint(self):
         with source.make_server() as server:
             thread = threading.Thread(target=server.serve_forever, daemon=True); thread.start()
@@ -19,6 +22,6 @@ class SupplierSourceTests(unittest.TestCase):
                 with urlopen('http://127.0.0.1:%d/__state' % server.server_port, timeout=5) as response:
                     self.assertEqual(json.load(response)['generation'], 1)
             finally:
-                server.shutdown(); thread.join()
+                server.shutdown(); server.server_close(); thread.join()
 
 if __name__ == '__main__': unittest.main()

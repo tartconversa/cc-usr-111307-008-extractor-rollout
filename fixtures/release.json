@@ -1,0 +1,26 @@
+{
+  "schema": "catalog.release-config/v1",
+  "circuit_failure_threshold": 2,
+  "thresholds": [
+    {
+      "family": "resource-detail",
+      "min_pages": 4,
+      "min_gold_pages": 2,
+      "min_live_pages": 2,
+      "required_pass_rate": 1.0,
+      "max_ambiguity_rate": 0,
+      "max_gold_conflicts": 0,
+      "max_diff_rate": null
+    },
+    {
+      "family": "series",
+      "min_pages": 2,
+      "min_gold_pages": 2,
+      "min_live_pages": 0,
+      "required_pass_rate": 1.0,
+      "max_ambiguity_rate": 0,
+      "max_gold_conflicts": 0,
+      "max_diff_rate": null
+    }
+  ]
+}

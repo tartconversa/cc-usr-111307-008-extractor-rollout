@@ -3,23 +3,57 @@
   "entry": "classic",
   "pages": {
     "classic": "<html><meta charset=\"utf-8\"><main id=\"resource\"><h1>目录甲</h1><div class=\"provider\">甲供方</div><p class=\"license\">研究</p></main></html>",
-    "drift": "<html><meta charset=\"utf-8\"><aside><div class=\"provider\">推荐机构</div></aside><main id=\"resource\"><h1>目录甲</h1><div class=\"owner\">甲供方</div><p class=\"license\">研究</p></main></html>"
+    "classic2": "<html><meta charset=\"utf-8\"><main id=\"resource\"><h1>目录乙</h1><div class=\"provider\">乙供方</div><p class=\"license\">开放</p></main></html>",
+    "drift": "<html><meta charset=\"utf-8\"><aside><div class=\"provider\">推荐机构</div></aside><main id=\"resource\"><h1>目录甲</h1><div class=\"owner\">甲供方</div><p class=\"license\">研究</p></main></html>",
+    "drift2": "<html><meta charset=\"utf-8\"><main id=\"resource\"><h1>目录丙</h1><div class=\"owner\">丙供方</div><p class=\"license\">开放</p></main><aside class=\"recommend\"><div class=\"provider\">推荐机构</div></aside></html>",
+    "live-a": "<html><meta charset=\"utf-8\"><aside><div class=\"provider\">推荐机构</div></aside><main id=\"resource\"><h1>目录丁</h1><div class=\"owner\">丁供方</div><p class=\"license\">研究</p></main></html>",
+    "live-b": "<html><meta charset=\"utf-8\"><aside class=\"promo\"><div class=\"provider\">合作机构</div></aside><main id=\"resource\"><h1>目录戊</h1><div class=\"owner\">戊供方</div><p class=\"license\">研究</p></main></html>",
+    "live-c": "<html><meta charset=\"utf-8\"><main id=\"resource\"><h1>目录己</h1><div class=\"owner\">己供方</div><p class=\"license\">开放</p></main><section><div class=\"provider\">赞助机构</div></section></html>",
+    "series-old": "<html><meta charset=\"utf-8\"><main id=\"resource\"><h1>连续出版物甲</h1><div class=\"provider\">甲供方</div></main></html>",
+    "series-old2": "<html><meta charset=\"utf-8\"><main id=\"resource\"><h1>连续出版物乙</h1><div class=\"provider\">乙供方</div></main></html>",
+    "series-live-1": "<html><meta charset=\"utf-8\"><main id=\"resource\"><h1>连续出版物丙</h1><div class=\"provider\">丙供方</div></main></html>",
+    "series-live-2": "<html><meta charset=\"utf-8\"><main id=\"resource\"><h1>连续出版物丁</h1><div class=\"provider\">丁供方</div></main></html>",
+    "series-broken": "<html><meta charset=\"utf-8\"><main id=\"resource\"><div class=\"provider\">戊供方</div><div class=\"provider\">己供方</div></main></html>"
   },
   "gold": {
     "classic": {
       "name": "目录甲",
-      "provider": "甲供方"
+      "provider": "甲供方",
+      "license": "研究"
+    },
+    "classic2": {
+      "name": "目录乙",
+      "provider": "乙供方",
+      "license": "开放"
     },
     "drift": {
       "name": "目录甲",
+      "provider": "甲供方",
+      "license": "研究"
+    },
+    "drift2": {
+      "name": "目录丙",
+      "provider": "丙供方",
+      "license": "开放"
+    },
+    "series-old": {
+      "name": "连续出版物甲",
       "provider": "甲供方"
+    },
+    "series-old2": {
+      "name": "连续出版物乙",
+      "provider": "乙供方"
     }
   },
   "release": {
     "page_family": "resource-detail",
     "min_pages": 2,
+    "min_gold_pages": 2,
     "required_pass_rate": 1.0,
     "max_ambiguity_rate": 0,
-    "max_gold_conflicts": 0
+    "max_gold_conflicts": 0,
+    "max_diff_rate": null,
+    "circuit_failure_threshold": 2,
+    "min_live_pages": 2
   }
 }
